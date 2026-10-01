@@ -1,0 +1,567 @@
+/* 仏ピク — Senju temp: night city glow, streetwear, pictogram-first */
+:root {
+  --bg: #0a0a0c;
+  --bg-elev: #121218;
+  --bg-card: #16161e;
+  --text: #f2f0ec;
+  --text-muted: #9a968c;
+  --accent: #e31c23;
+  --accent-soft: rgba(227, 28, 35, 0.35);
+  --glow: rgba(255, 80, 90, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --max: 960px;
+  --space: clamp(1.25rem, 4vw, 2.5rem);
+  --font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    "Yu Gothic", "Meiryo", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(227, 28, 35, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(40, 60, 120, 0.15), transparent),
+    radial-gradient(ellipse 40% 30% at 10% 70%, rgba(227, 28, 35, 0.06), transparent);
+  background-attachment: fixed;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+a:hover {
+  color: #ff4a50;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 12, 0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.85rem var(--space);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.brand {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.brand small {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.nav a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* Main */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--space);
+  padding-bottom: 4rem;
+}
+
+.page-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+}
+
+.page-lead {
+  color: var(--text-muted);
+  margin: 0 0 2.5rem;
+  max-width: 36em;
+}
+
+/* Hero (top) */
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  padding: clamp(2rem, 8vw, 4.5rem) 0 3rem;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 3rem;
+  }
+}
+
+.hero-copy h1 {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  margin: 0 0 1rem;
+}
+
+.hero-copy .reading {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-copy .slogan {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--text);
+  margin: 0 0 2rem;
+  letter-spacing: 0.06em;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictogram-wrap {
+  width: min(42vw, 280px);
+  position: relative;
+}
+
+.pictogram-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(circle, var(--glow), transparent 65%);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pictogram-wrap svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  filter: drop-shadow(0 0 18px var(--glow)) drop-shadow(0 0 40px rgba(227, 28, 35, 0.25));
+}
+
+.pictogram-wrap.large {
+  width: min(55vw, 320px);
+  margin: 0 auto 2rem;
+}
+
+.pictogram-wrap.grid-item {
+  width: 55%;
+  margin: 0 auto 0.75rem;
+}
+
+.pictogram-wrap.grid-item::before {
+  opacity: 0.35;
+}
+
+/* Buttons */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 720px) {
+  .hero .cta-row {
+    justify-content: flex-start;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent-soft);
+}
+
+.btn-primary:hover {
+  background: #ff2a32;
+  color: #fff;
+  box-shadow: 0 0 28px rgba(227, 28, 35, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-shop {
+  font-size: 1.05rem;
+  padding: 1rem 2rem;
+}
+
+/* About */
+.prose {
+  max-width: 38em;
+}
+
+.prose p {
+  margin: 0 0 1.25rem;
+}
+
+.prose .slogan-line {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+}
+
+.x-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.x-block a {
+  word-break: break-all;
+}
+
+/* Zukan grid */
+.zukan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .zukan-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .zukan-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.zukan-card {
+  display: block;
+  text-align: center;
+  padding: 1.25rem 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.zukan-card:hover {
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 24px rgba(227, 28, 35, 0.15);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.zukan-card .name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.zukan-card .furigana {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin: 0.2rem 0 0;
+}
+
+/* Detail */
+.detail-layout {
+  text-align: center;
+  max-width: 36em;
+  margin: 0 auto;
+}
+
+.detail-layout .meaning,
+.detail-layout .street {
+  text-align: left;
+  margin: 1.5rem 0 0;
+}
+
+.detail-layout h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: none;
+  margin: 2rem 0 0.5rem;
+  text-align: left;
+}
+
+.detail-layout .sku {
+  text-align: left;
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.detail-layout .sku a {
+  font-weight: 600;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.detail-name {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.08em;
+}
+
+.detail-furi {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+/* Shop */
+.shop-panel {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-width: 28em;
+  margin: 0 auto;
+}
+
+.shop-panel p {
+  color: var(--text-muted);
+  margin: 0 0 1.75rem;
+}
+
+/* Contact */
+.contact-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  max-width: 36em;
+}
+
+.contact-form {
+  max-width: 28em;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contact-alt {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.b2b-note {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elev);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 36em;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  padding: 2rem var(--space);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}

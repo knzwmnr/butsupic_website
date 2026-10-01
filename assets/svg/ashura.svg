@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" role="img" aria-label="阿修羅">
+  <!-- three heads -->
+  <circle cx="100" cy="48" r="22" fill="#e31c23"/>
+  <circle cx="68" cy="58" r="16" fill="#c4181e"/>
+  <circle cx="132" cy="58" r="16" fill="#c4181e"/>
+  <rect x="92" y="68" width="16" height="10" rx="2" fill="#e31c23"/>
+  <!-- torso -->
+  <path fill="#e31c23" d="M70 80 L130 80 L138 175 Q100 195 62 175 Z"/>
+  <!-- six arms (simplified bars) -->
+  <rect x="18" y="95" width="52" height="10" rx="4" fill="#c4181e" transform="rotate(-25 44 100)"/>
+  <rect x="18" y="120" width="52" height="10" rx="4" fill="#c4181e"/>
+  <rect x="18" y="145" width="52" height="10" rx="4" fill="#c4181e" transform="rotate(25 44 150)"/>
+  <rect x="130" y="95" width="52" height="10" rx="4" fill="#c4181e" transform="rotate(25 156 100)"/>
+  <rect x="130" y="120" width="52" height="10" rx="4" fill="#c4181e"/>
+  <rect x="130" y="145" width="52" height="10" rx="4" fill="#c4181e" transform="rotate(-25 156 150)"/>
+  <!-- legs -->
+  <rect x="78" y="175" width="16" height="55" rx="4" fill="#c4181e"/>
+  <rect x="106" y="175" width="16" height="55" rx="4" fill="#c4181e"/>
+  <ellipse cx="100" cy="250" rx="40" ry="8" fill="#8a1014" opacity="0.65"/>
+</svg>

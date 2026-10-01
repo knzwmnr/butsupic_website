@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" role="img" aria-label="普賢菩薩">
+  <ellipse cx="100" cy="40" rx="34" ry="10" fill="none" stroke="#e31c23" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="100" cy="46" r="22" fill="#e31c23"/>
+  <rect x="93" y="66" width="14" height="10" rx="2" fill="#e31c23"/>
+  <path fill="#e31c23" d="M62 78 L138 78 L145 155 Q100 170 55 155 Z"/>
+  <ellipse cx="55" cy="115" rx="12" ry="28" fill="#c4181e"/>
+  <ellipse cx="145" cy="115" rx="12" ry="28" fill="#c4181e"/>
+  <!-- elephant mount silhouette (simple) -->
+  <ellipse cx="100" cy="195" rx="58" ry="32" fill="#c4181e"/>
+  <ellipse cx="42" cy="200" rx="14" ry="22" fill="#8a1014"/>
+  <rect x="30" y="215" width="8" height="28" rx="3" fill="#8a1014"/>
+  <rect x="55" y="218" width="10" height="26" rx="3" fill="#8a1014"/>
+  <rect x="135" y="218" width="10" height="26" rx="3" fill="#8a1014"/>
+  <rect x="160" y="215" width="8" height="28" rx="3" fill="#8a1014"/>
+  <ellipse cx="100" cy="255" rx="50" ry="8" fill="#5a0a0c" opacity="0.5"/>
+</svg>

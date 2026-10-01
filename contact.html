@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お問い合わせ｜仏ピク</title>
+  <meta name="description" content="仏ピクへのコラボ・卸・ミュージアムショップのご相談。">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">仏ピク<small>ぶつぴく / butsuzo pictogram</small></a>
+      <nav aria-label="メイン">
+        <ul class="nav">
+          <li><a href="/">トップ</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/zukan/">図鑑</a></li>
+          <li><a href="/shop.html">ショップ</a></li>
+          <li><a href="/contact.html" aria-current="page">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">お問い合わせ</h1>
+    <p class="page-lead">コラボ・卸・ミュージアムショップなど</p>
+    <p class="contact-note">ご相談内容を選んで送信してください。メールアプリが開きます（プレビュー用スタブ）。</p>
+
+    <form class="contact-form" id="contact-form" action="#" method="get">
+      <label>
+        種別
+        <select name="type" required>
+          <option value="">選択してください</option>
+          <option value="コラボ">コラボ</option>
+          <option value="卸・取扱">卸・取扱</option>
+          <option value="ミュージアムショップ">ミュージアムショップ</option>
+          <option value="その他">その他</option>
+        </select>
+      </label>
+      <label>
+        お名前 / 団体名
+        <input type="text" name="name" autocomplete="organization" required>
+      </label>
+      <label>
+        内容
+        <textarea name="body" required placeholder="ご用件を簡潔にご記入ください"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">メールで送る</button>
+    </form>
+
+    <p class="contact-alt">または直接： <a href="mailto:hello@butsupic.com">hello@butsupic.com</a>（ドメイン接続後に運用想定）</p>
+
+    <aside class="b2b-note">
+      <strong>B2B</strong> — 卸・ミュージアムショップ・企業コラボのご相談を受け付けています。ロット・納期・素材（蛍光・蓄光含む）は内容に応じてご案内します。
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-brand">仏ピク</p>
+    <ul class="footer-nav">
+      <li><a href="/">トップ</a></li>
+      <li><a href="/about.html">ABOUT</a></li>
+      <li><a href="/zukan/">図鑑</a></li>
+      <li><a href="/shop.html">ショップ</a></li>
+      <li><a href="/contact.html">お問い合わせ</a></li>
+    </ul>
+    <p><a href="https://twitter.com/butsuzo_pict" rel="noopener noreferrer" target="_blank">X @butsuzo_pict</a></p>
+    <p>© 仏ピク（butsuzo pictogram）</p>
+  </footer>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" role="img" aria-label="薬師如来">
+  <ellipse cx="100" cy="48" rx="38" ry="12" fill="none" stroke="#e31c23" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="100" cy="56" r="26" fill="#e31c23"/>
+  <rect x="91" y="80" width="18" height="12" rx="3" fill="#e31c23"/>
+  <path fill="#e31c23" d="M58 95 L142 95 L150 215 Q100 238 50 215 Z"/>
+  <!-- left: jar -->
+  <rect x="38" y="130" width="28" height="36" rx="4" fill="#c4181e"/>
+  <rect x="44" y="122" width="16" height="10" rx="2" fill="#ff4a50"/>
+  <!-- right arm -->
+  <ellipse cx="148" cy="140" rx="14" ry="32" fill="#c4181e"/>
+  <ellipse cx="100" cy="250" rx="44" ry="9" fill="#8a1014" opacity="0.65"/>
+</svg>
