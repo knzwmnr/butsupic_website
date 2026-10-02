@@ -95,3 +95,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .form button{border:0;cursor:pointer;font-family:inherit;align-self:flex-start}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.md{animation:none}}
 
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form button[disabled]{opacity:.6;cursor:progress}
+.status{margin:0;padding:16px 20px;border-radius:16px;font-weight:800;font-size:15px}
+.status.ok{background:#D3F5EA}
+.status.ng{background:#FFD3D6}
