@@ -22,7 +22,7 @@
     "yomi": "ふどうみょうおう",
     "desc": "大日如来の化身とされる明王。怒りの表情で煩悩を断ち切り、力ずくでも人々を救います。右手に剣、左手に羂索（けんさく）という縄を持ちます。",
     "cls": "m-fudo",
-    "bg": "#0A3CE6",
+    "bg": "#0037ff",
     "fg": "#fff"
   },
   "yakushi": {
@@ -90,7 +90,7 @@
     "fg": "#333333"
   }
 };
-  var FILLS = {"ashura": "#F0314F", "fudo": "#0A3CE6", "miroku": "#F2A900", "yakushi": "#FF8A1F", "amida": "#1E9BD8", "dainichi": "#7A3CF0"};
+  var FILLS = {"ashura": "#F0314F", "fudo": "#0037ff", "miroku": "#F2A900", "yakushi": "#FF8A1F", "amida": "#1E9BD8", "dainichi": "#7A3CF0"};
   var $ = function (id) { return document.getElementById(id); };
 
   // 今日の仏ピク：日付ごとに塗りデータのある仏から1体
@@ -106,6 +106,53 @@
     $("today-name").textContent = it.name;
     $("today-yomi").textContent = it.yomi;
     $("today-desc").textContent = it.desc;
+  }
+
+  // KV 背景の円：濃い青が一つおきに入れ替わり、残りはランダムな色になる。
+  // 白い文字の後ろに来る円には黄色を出さない。
+  var kv = $("kvbg");
+  if (kv && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    var dots = kv.children, DARK = "#0000ff", YELLOW = "#fff100";
+    var COLORS = ["#ff00ff", "#f7931e", "#39b54a", YELLOW], phase = 0;
+    // スマホ（2列）の初期配置：PC の並びを時計回りに90度回したもの
+    var ROTATED = [DARK, "#ff00ff", "#39b54a", DARK, DARK, "#f7931e", YELLOW, DARK];
+    var copy = document.querySelector("#top .hl > div");
+    var cols = function () { return getComputedStyle(kv).gridTemplateColumns.split(" ").length; };
+    var behindText = function (dot) {
+      if (!copy) return false;
+      var t = copy.getBoundingClientRect(), d = dot.getBoundingClientRect();
+      var cx = d.left + d.width / 2, cy = d.top + d.height / 2, r = d.width / 2;
+      var dx = cx - Math.max(t.left, Math.min(cx, t.right));
+      var dy = cy - Math.max(t.top, Math.min(cy, t.bottom));
+      return dx * dx + dy * dy < r * r;
+    };
+    var paint = function () {
+      var c = cols(), slots = [], i;
+      for (i = 0; i < dots.length; i++) {
+        if ((Math.floor(i / c) + (i % c) + phase) % 2 === 1) dots[i].style.backgroundColor = DARK;
+        else slots.push(dots[i]);
+      }
+      var pool = COLORS.slice().sort(function () { return Math.random() - 0.5; });
+      var safe = slots.filter(function (d) { return !behindText(d); });
+      var y = pool.indexOf(YELLOW);
+      if (!safe.length) pool[y] = pool[(y + 1) % pool.length];
+      else {
+        var target = slots.indexOf(safe[Math.floor(Math.random() * safe.length)]);
+        pool[y] = pool[target]; pool[target] = YELLOW;
+      }
+      for (i = 0; i < slots.length; i++) slots[i].style.backgroundColor = pool[i % pool.length];
+    };
+    if (cols() === 2) {
+      phase = 1;
+      for (var k = 0; k < dots.length; k++) {
+        dots[k].style.transition = "none";
+        dots[k].style.backgroundColor = ROTATED[k];
+      }
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { for (var k = 0; k < dots.length; k++) dots[k].style.transition = ""; });
+      });
+    }
+    setInterval(function () { phase = 1 - phase; paint(); }, 15000);
   }
 
   // 図鑑モーダル
