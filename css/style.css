@@ -105,5 +105,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .kvwrap{position:absolute;inset:74px 3%;container-type:size;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .kvbg{width:min(100cqw,200cqh,1165px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .kvbg span{display:block;aspect-ratio:1/1;border-radius:50%;transition:background-color 1.2s ease}
-@media(max-width:760px){.kvcopy{font-size:24px!important}.kvlogo{width:93%!important}.kvwrap{inset:100px 32px 36px}.kvbg{width:min(100cqw,50cqh);grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.kvcopy{font-size:26px!important;margin-bottom:-12px!important}.kvlogo{width:93%!important}.kvwrap{inset:100px 32px 36px}.kvbg{width:min(100cqw,50cqh);grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.kvbg span{transition:none}}
