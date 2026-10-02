@@ -100,3 +100,4 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .status{margin:0;padding:16px 20px;border-radius:16px;font-weight:800;font-size:15px}
 .status.ok{background:#D3F5EA}
 .status.ng{background:#FFD3D6}
+.gimg{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:20px;background:#EEF1F4}
