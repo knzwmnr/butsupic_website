@@ -1,26 +1,26 @@
 body{margin:0}
 a{color:inherit;text-decoration:none}a:hover{color:inherit;opacity:.85}
 .pic{display:block;background:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
-.m-logo{-webkit-mask-image:url(/assets/svg/butsupic_logo.svg);mask-image:url(/assets/svg/butsupic_logo.svg)}
-.m-kv{-webkit-mask-image:url(/assets/svg/butsupic_kv_miroku.svg);mask-image:url(/assets/svg/butsupic_kv_miroku.svg);-webkit-mask-size:100% auto;mask-size:100% auto;-webkit-mask-position:top center;mask-position:top center}
-.m-ashura{-webkit-mask-image:url(/assets/svg/ashura.svg);mask-image:url(/assets/svg/ashura.svg)}
-.m-fudo{-webkit-mask-image:url(/assets/svg/fudo.svg);mask-image:url(/assets/svg/fudo.svg)}
-.m-miroku{-webkit-mask-image:url(/assets/svg/miroku.svg);mask-image:url(/assets/svg/miroku.svg)}
-.m-yakushi{-webkit-mask-image:url(/assets/svg/yakushi.svg);mask-image:url(/assets/svg/yakushi.svg)}
-.m-amida{-webkit-mask-image:url(/assets/svg/amida.svg);mask-image:url(/assets/svg/amida.svg)}
-.m-dainichi{-webkit-mask-image:url(/assets/svg/dainichi.svg);mask-image:url(/assets/svg/dainichi.svg)}
-.m-shaka{-webkit-mask-image:url(/assets/svg/shaka.svg);mask-image:url(/assets/svg/shaka.svg)}
-.m-bishamon{-webkit-mask-image:url(/assets/svg/bishamon.svg);mask-image:url(/assets/svg/bishamon.svg)}
-.m-fugen{-webkit-mask-image:url(/assets/svg/fugen.svg);mask-image:url(/assets/svg/fugen.svg)}
-.m-monjyu{-webkit-mask-image:url(/assets/svg/monjyu.svg);mask-image:url(/assets/svg/monjyu.svg)}
-.m-nyoirin{-webkit-mask-image:url(/assets/svg/nyoirin.svg);mask-image:url(/assets/svg/nyoirin.svg)}
-.m-ashura-fill{-webkit-mask-image:url(/assets/svg/ashura_fill.svg);mask-image:url(/assets/svg/ashura_fill.svg)}
-.m-fudo-fill{-webkit-mask-image:url(/assets/svg/fudo_fill.svg);mask-image:url(/assets/svg/fudo_fill.svg)}
-.m-miroku-fill{-webkit-mask-image:url(/assets/svg/miroku_fill.svg);mask-image:url(/assets/svg/miroku_fill.svg)}
-.m-yakushi-fill{-webkit-mask-image:url(/assets/svg/yakushi_fill.svg);mask-image:url(/assets/svg/yakushi_fill.svg)}
-.m-amida-fill{-webkit-mask-image:url(/assets/svg/amida_fill.svg);mask-image:url(/assets/svg/amida_fill.svg)}
-.m-dainichi-fill{-webkit-mask-image:url(/assets/svg/dainichi_fill.svg);mask-image:url(/assets/svg/dainichi_fill.svg)}
-.m-exit-fill{-webkit-mask-image:url(/assets/svg/exit_fill.svg);mask-image:url(/assets/svg/exit_fill.svg)}
+.m-logo{-webkit-mask-image:url(/assets/svg/butsupic_logo.svg?v=20261002a);mask-image:url(/assets/svg/butsupic_logo.svg?v=20261002a)}
+.m-kv{-webkit-mask-image:url(/assets/svg/butsupic_kv_miroku.svg?v=20261002a);mask-image:url(/assets/svg/butsupic_kv_miroku.svg?v=20261002a);-webkit-mask-size:100% auto;mask-size:100% auto;-webkit-mask-position:top center;mask-position:top center}
+.m-ashura{-webkit-mask-image:url(/assets/svg/ashura.svg?v=20261002a);mask-image:url(/assets/svg/ashura.svg?v=20261002a)}
+.m-fudo{-webkit-mask-image:url(/assets/svg/fudo.svg?v=20261002a);mask-image:url(/assets/svg/fudo.svg?v=20261002a)}
+.m-miroku{-webkit-mask-image:url(/assets/svg/miroku.svg?v=20261002a);mask-image:url(/assets/svg/miroku.svg?v=20261002a)}
+.m-yakushi{-webkit-mask-image:url(/assets/svg/yakushi.svg?v=20261002a);mask-image:url(/assets/svg/yakushi.svg?v=20261002a)}
+.m-amida{-webkit-mask-image:url(/assets/svg/amida.svg?v=20261002a);mask-image:url(/assets/svg/amida.svg?v=20261002a)}
+.m-dainichi{-webkit-mask-image:url(/assets/svg/dainichi.svg?v=20261002a);mask-image:url(/assets/svg/dainichi.svg?v=20261002a)}
+.m-shaka{-webkit-mask-image:url(/assets/svg/shaka.svg?v=20261002a);mask-image:url(/assets/svg/shaka.svg?v=20261002a)}
+.m-bishamon{-webkit-mask-image:url(/assets/svg/bishamon.svg?v=20261002a);mask-image:url(/assets/svg/bishamon.svg?v=20261002a)}
+.m-fugen{-webkit-mask-image:url(/assets/svg/fugen.svg?v=20261002a);mask-image:url(/assets/svg/fugen.svg?v=20261002a)}
+.m-monjyu{-webkit-mask-image:url(/assets/svg/monjyu.svg?v=20261002a);mask-image:url(/assets/svg/monjyu.svg?v=20261002a)}
+.m-nyoirin{-webkit-mask-image:url(/assets/svg/nyoirin.svg?v=20261002a);mask-image:url(/assets/svg/nyoirin.svg?v=20261002a)}
+.m-ashura-fill{-webkit-mask-image:url(/assets/svg/ashura_fill.svg?v=20261002a);mask-image:url(/assets/svg/ashura_fill.svg?v=20261002a)}
+.m-fudo-fill{-webkit-mask-image:url(/assets/svg/fudo_fill.svg?v=20261002a);mask-image:url(/assets/svg/fudo_fill.svg?v=20261002a)}
+.m-miroku-fill{-webkit-mask-image:url(/assets/svg/miroku_fill.svg?v=20261002a);mask-image:url(/assets/svg/miroku_fill.svg?v=20261002a)}
+.m-yakushi-fill{-webkit-mask-image:url(/assets/svg/yakushi_fill.svg?v=20261002a);mask-image:url(/assets/svg/yakushi_fill.svg?v=20261002a)}
+.m-amida-fill{-webkit-mask-image:url(/assets/svg/amida_fill.svg?v=20261002a);mask-image:url(/assets/svg/amida_fill.svg?v=20261002a)}
+.m-dainichi-fill{-webkit-mask-image:url(/assets/svg/dainichi_fill.svg?v=20261002a);mask-image:url(/assets/svg/dainichi_fill.svg?v=20261002a)}
+.m-exit-fill{-webkit-mask-image:url(/assets/svg/exit_fill.svg?v=20261002a);mask-image:url(/assets/svg/exit_fill.svg?v=20261002a)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
