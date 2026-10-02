@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20261002b">
+<link rel="stylesheet" href="/css/style.css?v=20261003a">
 </head>
 <body>
 <a class="skip" href="#main">本文へ</a>
@@ -46,8 +46,10 @@
 </section>
 <section class="sec" style="padding: 80px 0 96px">
 <div class="wrap" style="max-width: 720px; display: flex; flex-direction: column; gap: 28px; line-height: 1.9; font-size: 16px; font-weight: 500">
-<p style="margin: 0">ご相談内容を選んで送信してください。メールアプリが開きます。</p>
-<form class="form" id="contact-form" action="#" method="get">
+<p style="margin: 0">ご相談内容をご記入のうえ送信してください。いただいたメールアドレス宛にご返信します。</p>
+<form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="post">
+<input type="hidden" name="access_key" value="463b8077-c805-4283-b69c-a85a592765b4">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label>種別
 <select name="type" required>
 <option value="">選択してください</option>
@@ -61,10 +63,14 @@
 <label>お名前 / 団体名
 <input type="text" name="name" autocomplete="organization" required>
 </label>
+<label>メールアドレス
+<input type="email" name="email" autocomplete="email" inputmode="email" required>
+</label>
 <label>内容
 <textarea name="body" required placeholder="ご用件を簡潔にご記入ください"></textarea>
 </label>
-<button type="submit" class="btn" style="background: #333333; color: #fff; min-height: 56px; padding: 0 40px">メールで送る</button>
+<button type="submit" class="btn" style="background: #333333; color: #fff; min-height: 56px; padding: 0 40px">送信する</button>
+<p id="contact-status" class="status" role="status" aria-live="polite" hidden></p>
 </form>
 <p style="margin: 0">または直接： <a href="mailto:info@butsupic.com" style="text-decoration: underline; font-weight: 800">info@butsupic.com</a></p>
 <p style="margin: 0; background: #D3F5EA; border-radius: 20px; padding: 20px 24px; font-size: 15px"><strong>B2B</strong> — 卸・ミュージアムショップ・企業コラボのご相談を受け付けています。ロット・納期・素材（蛍光・蓄光含む）は内容に応じてご案内します。</p>
@@ -82,6 +88,6 @@
 </footer>
 
 </div>
-<script src="/js/main.js?v=20261002c" defer></script>
+<script src="/js/main.js?v=20261003a" defer></script>
 </body>
 </html>

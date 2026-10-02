@@ -140,17 +140,46 @@
     });
   }
 
-  // お問い合わせフォーム：メールアプリを開く
+  // お問い合わせフォーム：Web3Forms にそのまま送信する
   var form = $("contact-form");
   if (form) {
+    var status = $("contact-status");
+    var btn = form.querySelector('button[type="submit"]');
+    var say = function (kind, text) {
+      status.className = "status " + kind;
+      status.textContent = text;
+      status.hidden = false;
+    };
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var v = function (n) { return (form.querySelector('[name="' + n + '"]') || {}).value || ""; };
-      var subject = encodeURIComponent("[仏ピク] " + v("type") + (v("name") ? " / " + v("name") : ""));
-      // 改行は CRLF に統一する（CR や LF 単独だと受信側で拒否されることがある）
-      var text = "種別: " + v("type") + "\nお名前: " + v("name") + "\n\n" + v("body");
-      var body = encodeURIComponent(text.replace(/\r\n|\r|\n/g, "\r\n"));
-      window.location.href = "mailto:info@butsupic.com?subject=" + subject + "&body=" + body;
+      if (form.querySelector('[name="botcheck"]').checked) return;
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "送信中…";
+      status.hidden = true;
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: v("access_key"),
+          subject: "[仏ピク] " + v("type") + " / " + v("name"),
+          from_name: "仏ピク お問い合わせ",
+          "種別": v("type"),
+          name: v("name"),
+          email: v("email"),
+          message: v("body")
+        })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (!d || !d.success) throw new Error((d && d.message) || "error");
+        form.reset();
+        say("ok", "送信しました。お問い合わせありがとうございます。内容を確認のうえご返信します。");
+      }).catch(function () {
+        say("ng", "送信できませんでした。お手数ですが、時間をおいて再度お試しいただくか、info@butsupic.com まで直接ご連絡ください。");
+      }).then(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+      });
     });
   }
 })();
