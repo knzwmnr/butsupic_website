@@ -147,7 +147,9 @@
       e.preventDefault();
       var v = function (n) { return (form.querySelector('[name="' + n + '"]') || {}).value || ""; };
       var subject = encodeURIComponent("[仏ピク] " + v("type") + (v("name") ? " / " + v("name") : ""));
-      var body = encodeURIComponent("種別: " + v("type") + "\nお名前: " + v("name") + "\n\n" + v("body"));
+      // 改行は CRLF に統一する（CR や LF 単独だと受信側で拒否されることがある）
+      var text = "種別: " + v("type") + "\nお名前: " + v("name") + "\n\n" + v("body");
+      var body = encodeURIComponent(text.replace(/\r\n|\r|\n/g, "\r\n"));
       window.location.href = "mailto:info@butsupic.com?subject=" + subject + "&body=" + body;
     });
   }
