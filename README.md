@@ -33,4 +33,4 @@ python3 -m http.server 8080
 ## 未対応・仮のもの
 
 - グッズの写真は「COMING SOON」の枠のまま
-- `hello@butsupic.com` が受信できる状態か要確認
+- お問い合わせの宛先は `info@butsupic.com`（Cloudflare Email Routing で転送）

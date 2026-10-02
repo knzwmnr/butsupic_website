@@ -148,7 +148,7 @@
       var v = function (n) { return (form.querySelector('[name="' + n + '"]') || {}).value || ""; };
       var subject = encodeURIComponent("[仏ピク] " + v("type") + (v("name") ? " / " + v("name") : ""));
       var body = encodeURIComponent("種別: " + v("type") + "\nお名前: " + v("name") + "\n\n" + v("body"));
-      window.location.href = "mailto:hello@butsupic.com?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:info@butsupic.com?subject=" + subject + "&body=" + body;
     });
   }
 })();
