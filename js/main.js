@@ -173,7 +173,7 @@
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (!d || !d.success) throw new Error((d && d.message) || "error");
         form.reset();
-        say("ok", "送信しました。お問い合わせありがとうございます。内容を確認のうえご返信します。");
+        say("ok", "送信しました。お問い合わせありがとうございます。内容を確認のうえ butsuzopict@gmail.com より返信します");
       }).catch(function () {
         say("ng", "送信できませんでした。お手数ですが、時間をおいて再度お試しいただくか、info@butsupic.com まで直接ご連絡ください。");
       }).then(function () {
