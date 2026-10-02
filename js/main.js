@@ -152,7 +152,7 @@
         requestAnimationFrame(function () { for (var k = 0; k < dots.length; k++) dots[k].style.transition = ""; });
       });
     }
-    setInterval(function () { phase = 1 - phase; paint(); }, 3000);
+    setInterval(function () { phase = 1 - phase; paint(); }, 15000);
   }
 
   // 図鑑モーダル
