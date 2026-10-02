@@ -108,6 +108,23 @@
     $("today-desc").textContent = it.desc;
   }
 
+  // KV 背景の円：濃い青が一つおきに入れ替わり、残りはランダムな色になる
+  var kv = $("kvbg");
+  if (kv && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    var dots = kv.children, DARK = "#0000ff", COLORS = ["#ff00ff", "#f7931e", "#39b54a", "#fff100"], phase = 0;
+    var paint = function () {
+      var cols = getComputedStyle(kv).gridTemplateColumns.split(" ").length;
+      var pool = COLORS.slice().sort(function () { return Math.random() - 0.5; });
+      for (var i = 0, n = 0; i < dots.length; i++) {
+        var odd = (Math.floor(i / cols) + (i % cols) + phase) % 2 === 1;
+        dots[i].style.backgroundColor = odd ? DARK : pool[n++ % pool.length];
+      }
+    };
+    // HTML の初期配置は4列用。列数が違う幅（スマホ）では最初に市松へ並べ直す
+    if (getComputedStyle(kv).gridTemplateColumns.split(" ").length !== 4) paint();
+    setInterval(function () { phase = 1 - phase; paint(); }, 3000);
+  }
+
   // 図鑑モーダル
   var md = $("zm"), ov = $("zm-ov"), last = null;
   if (md && ov) {
